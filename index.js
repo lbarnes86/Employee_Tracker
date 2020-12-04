@@ -46,4 +46,26 @@ async function loadMainPrompts(){
 
     }
 }
+// view employees
+async function viewAllEmployees() {
+    let allEmployees = await db.findAllEmployees();
+    console.table(allEmployees);
 
+    loadMainPrompts();
+}
+
+//view departments 
+async function viewAllDepartments() {
+    let allDepartments = await db.findAllDepartments();
+    console.table(allDepartments);
+
+    loadMainPrompts();
+}
+// view roles
+async function viewAllRoles() {
+    let allRoles = await db.findAllRoles();
+    console.table(allRoles);
+
+    loadMainPrompts();
+}
+// add employee
