@@ -33,3 +33,4 @@ class Store{
             name: response.deptName
         })
     }
+    updateEmployee(response) {
