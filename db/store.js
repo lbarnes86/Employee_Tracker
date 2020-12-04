@@ -21,4 +21,10 @@ class Store{
             manager_id: response.managerID,
         });
     }
-    addRole(response) 
+    addRole(response) {
+        return this.connection.query("INSERT INTO roles SET ?", {
+            title: response.roleTitle,
+            salary: response.salaryAmt,
+            department_id: response.deptID
+        })
+    }
