@@ -21,3 +21,4 @@ class Store{
             manager_id: response.managerID,
         });
     }
+    addRole(response) 
