@@ -1,6 +1,6 @@
 # Employee Tracker
 
-- Project Repository: 
+- Project Repository: https://github.com/lbarnes86/Employee_Tracker
 
 - Walk-through Video: 
 
