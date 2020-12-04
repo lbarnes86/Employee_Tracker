@@ -35,3 +35,5 @@ class Store{
     }
     updateEmployee(response) {
         return this.connection.query("UPDATE employees SET role_id ? WHERE last_name ?", {
+            role_id: response.roleUpdate
+        })
