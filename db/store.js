@@ -28,3 +28,4 @@ class Store{
             department_id: response.deptID
         })
     }
+    addDepartment(response)
