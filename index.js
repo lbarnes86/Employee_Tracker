@@ -121,4 +121,14 @@ async function addNewRole() {
     loadMainPrompts();
 
 }
-// add dep
+// add department 
+async function addNewDepartment() {
+    const {choice} = await prompt ([
+        {
+            type: 'input',
+            message: 'Enter department name',
+            name: 'deptName'
+        }],
+    )
+    await
+}
