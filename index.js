@@ -13,6 +13,16 @@ async function loadMainPrompts(){
             'View all employees',
             'View all departments',
             'View all roles',
+            'Add new employee',
+            'Add new department',
+            'Add new role',
+            'Update employee roles'
         ]
-    })
+    });
+    switch (choice){
+        case 'View all employees':
+            viewAllEmployees();
+            break;
+            
+    }
 }
