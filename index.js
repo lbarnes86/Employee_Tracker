@@ -3,7 +3,7 @@ const {addEmployee} = require("./db/store");
 require ("console.table");
 
 const db = require("./db/store")
-
+// initial prompt
 async function loadMainPrompts(){
     const {choice} = await prompt ({
         type: 'list',
@@ -23,6 +23,27 @@ async function loadMainPrompts(){
         case 'View all employees':
             viewAllEmployees();
             break;
-            
+        case 'View all departments':
+            viewAllDepartments();
+            break;
+        case 'View all roles':
+            viewAllRoles();
+            break;
+        case 'Add new employee':
+            addNewEmployee();
+            break;
+        case 'Add new department':
+            addNewDepartment();
+            break;
+        case 'Add new role':
+            addNewRole();
+            break;
+        case 'Update employee roles':
+            updateEmployeeRole();
+            break;
+            default:
+                process.exit()
+
     }
 }
+
