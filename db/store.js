@@ -28,4 +28,8 @@ class Store{
             department_id: response.deptID
         })
     }
-    addDepartment(response)
+    addDepartment(response) {
+        return this.connection.query("INSERT INTO departments SET ?", {
+            name: response.deptName
+        })
+    }
