@@ -73,22 +73,22 @@ async function addNewEmployee() {
     const {choice} = await prompt ([
         {
             type: 'input',
-            message: 'Enter employee\'s first name.'
+            message: 'Enter employee\'s first name.',
             name: 'firstName'
         },
         {
             type: 'input',
-            message: 'Enter employee\'s last name.'
+            message: 'Enter employee\'s last name.',
             name: 'lastName'
         },
         {
             type: 'input',
-            message: 'Enter employee\'s name.'
+            message: 'Enter employee\'s name.',
             name: 'roleID'
         },
         {
             type: 'input',
-            message: 'Enter manager\'s ID.'
+            message: 'Enter manager\'s ID.',
             name: 'managerID'
         }],
     )
@@ -130,5 +130,22 @@ async function addNewDepartment() {
             name: 'deptName'
         }],
     )
-    await
+    await db.addDepartment(choice);
+    loadMainPrompts()
+    }
+
+    async function updateEmployeeRole() {
+        const {choice} = await prompt([
+            {
+                type: 'input',
+                message: 'Choose employee to update',
+                name: 'empUpdate'
+            },
+            {
+                type: 'input',
+                message: 'Enter role to update the employee to',
+                name: 'roleUpdate'
+            }],
+            await db.updateEmployee(choice)
+        )
 }
