@@ -10,4 +10,4 @@ const connection = mysql.createConnection ({
 connection.connect();
 connection.query = util.promisify(connection.query);
 
-module
+module.exports = connection
