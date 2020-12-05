@@ -1,28 +1,31 @@
 # Employee Tracker
+This is a command line application that utilizes mySQL to store data about employees.
 
 - Project Repository: https://github.com/lbarnes86/Employee_Tracker
 
 - Walk-through Video: 
 
 ## Description
-This Employee Tracker application allows you to view and manage the departments, roles, and employees for a company.
+This Employee Tracker application allows you to view and manage your departments, roles, and employees.
 
 ## Table of Content
-- [Installation](#installation)
+- [Usage](#usage)
 - [Dependencies](#dependencies)
 - [Author](#author)
 - [Screenshots](#screenshots)
 
 
-## Installation
+## Usage
 ```
-none required
+In this application, the user can add, view, and delete employees, departments, roles, etc.
+
 ```
 
 ## Dependencies
-- inquirer
-- mySQL
-- express
+- Inquirer
+- MySQL
+- JavaScript
+- node
 - console.table
 
 ### Author 
