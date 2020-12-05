@@ -9,3 +9,7 @@ const connection = mysql.createConnection({
   password: 'rootroot',
   database: 'employeeManagementSystemDB',
 });
+
+connection.query = util.promisify(connection.query);
+
+module.exports = connection;
