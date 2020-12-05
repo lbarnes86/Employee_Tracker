@@ -1,11 +1,14 @@
+<div align="center">
+
 # Employee Tracker
+
+</div>
 
 This is a command line application that utilizes mySQL to store data about employees.
 
 - Project Repository: [Repository](https://github.com/lbarnes86/Employee_Tracker)
 
 - Walk-through Video: [Video](https://youtu.be/nX3Qhig55bY)
-
 
 ## Table of Contents
 
