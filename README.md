@@ -23,6 +23,7 @@ none required
 - inquirer
 - mySQL
 - express
+- console.table
 
 ### Author 
 
