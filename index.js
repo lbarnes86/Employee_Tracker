@@ -1,17 +1,8 @@
-let config = require('./utils/config')
 const mysql = require('mysql');
 const inquirer = require('inquirer');
-require('console.table');
+const connection = require('./config/connection');
+//require('console.table');
 
-var PORT = process.env.PORT || 8080;
-let connection = mysql.createConnection(config);
-
-// connection.connect((err) => {
-//     if (err) throw err;
-//     welcome();
-
-//     connection.end();
-// });
 
 // Starting inital prompt //
 let runApplication = true;
