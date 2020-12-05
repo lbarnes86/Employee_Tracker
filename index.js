@@ -124,3 +124,53 @@ const addDepartment = async () => {
       }
       start();
     };
+// *************************Add an Employee Logic******************************
+const addEmployee = async () => {
+    let roles = await connection.query(
+    `SELECT title, role.id FROM role;`
+    );
+    roles = roles.map(row => {
+      const rolesActual = { name: row.title, value: row.id } 
+      return rolesActual;
+    });
+    let managers = await connection.query(
+      `SELECT employee.id, first_Name, last_Name FROM employee`
+    );
+    managers = managers.map(each => {
+      return `${each.id} ${each.first_Name} ${each.last_Name}`
+    });
+    const answers = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'firstName',
+        message: 'What is the employee\'s first name?'
+      },
+      {
+        type: 'input',
+        name: 'lastName',
+        message: 'What is the employee\'s last name?'
+      },
+      {
+        type: 'list',
+        name: 'role_id',
+        message: 'Which role does the new employee have?',
+        choices: roles
+      },
+      {
+        type: 'list',
+        name: 'manager_id',
+        message: 'Who is the new employee\'s manager?',
+        choices: managers
+      }]);
+      try {
+        const managerId = answers.manager_id[0].split(' ');
+        const result = await connection.query(
+      `INSERT INTO employee (first_Name, last_Name, role_id, manager_id)
+        VALUES ('${answers.firstName}', '${answers.lastName}', '${answers.role_id}', '${managerId[0]}');`) 
+        console.log(`'The employee ${answers.firstName} was added successfully'`);
+      } catch (err) {
+        console.log("catch");
+        throw err
+      }
+  start();
+    };
