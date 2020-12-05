@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
   password: 'rootroot',
-  database: 'employeeManagementSystemDB',
+  database: 'employee_trackerDB',
 });
 
 connection.query = util.promisify(connection.query);
