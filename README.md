@@ -4,7 +4,7 @@
 
 </div>
 
-This is a command line application that utilizes mySQL to store data about employees.
+This is a command line application that utilizes MySQL to store data about employees.
 
 - Project Repository: [Repository](https://github.com/lbarnes86/Employee_Tracker)
 
@@ -20,8 +20,8 @@ This is a command line application that utilizes mySQL to store data about emplo
 - [License](#license)
 
 ## Description
->This Employee Tracker application allows you to view and manage your departments, roles, and employees.
 
+>This Employee Tracker application allows you to view and manage your departments, roles, and employees.
 
 ## Usage
 
