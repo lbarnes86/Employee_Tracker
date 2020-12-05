@@ -36,10 +36,15 @@ In this application, the user can add, view, and delete employees, departments, 
 
 ## Screenshots
 
+<img src="https://user-images.githubusercontent.com/70309736/101267178-ab267100-371b-11eb-8502-18e77b77b050.png">
+
+<img src="https://user-images.githubusercontent.com/70309736/101267180-acf03480-371b-11eb-91be-446a6cdf8871.png">
+
+<img src="https://user-images.githubusercontent.com/70309736/101267182-b37eac00-371b-11eb-9677-821b19341fa4.png">
 
 ## Contributors
 
 - Lloyd F Barnes 
 
 ## License
-© Lloyd F Barnes, SMU 2020
+© Lloyd F Barnes, 2020
