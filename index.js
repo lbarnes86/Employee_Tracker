@@ -174,3 +174,61 @@ const addEmployee = async () => {
       }
   start();
     };
+    // *************************View a Department Logic*****************************
+const viewDepartment = async () => {
+    // console.log('works');
+    const result = await connection.query(
+      'SELECT * FROM department;'
+      ); 
+        // console.log(result);
+     console.table(result);
+     start();
+    };
+  
+  // *************************View a Role Logic*****************************
+  const viewRole = async () => {
+    // console.log('works');
+    const result = await connection.query(
+      'SELECT * FROM role;'
+      ); 
+        // console.log(result);
+     console.table(result);
+     start();
+    };
+  
+    // *************************View a Employee Logic*****************************
+  const viewEmployee = async () => {
+    const result = await connection.query(
+      'SELECT * FROM employee;'
+      ); 
+     console.table(result);
+     start();
+    };
+  
+  // *************************Delete a Department Logic*****************************
+  const deleteDepartment = async () => {
+    let departments = await connection.query(
+      'SELECT id, department_name FROM department'
+      );
+      departments = departments.map(row => {
+        const currentDepartment = { name: row.department_name, value: row.id }
+        return currentDepartment;
+      });
+    const answers = await inquirer.prompt(
+      {
+      type: 'list',
+      name: 'department',
+      message: 'Which department do you want to delete?',
+      choices: departments,
+      })
+      try {
+        const result = await connection.query(
+      `DELETE FROM department WHERE id=${answers.department};`)
+        console.log(`'${answers.department} was deleted'`);
+      } catch (err) {
+        console.log("catch");
+        throw err
+      }
+      start();
+    };
+  
