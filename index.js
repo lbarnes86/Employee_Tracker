@@ -231,4 +231,79 @@ const viewDepartment = async () => {
       }
       start();
     };
+  // *************************Delete a Role Logic*****************************
+const deleteRole = async () => {
+    let roles = await connection.query(
+      'SELECT id, title FROM role'
+      );
+      roles = roles.map(row => {
+        const currentRoles = { name: row.title, value: row.id }
+        return currentRoles;
+      });
+    const answers = await inquirer.prompt(
+      {
+      type: 'list',
+      name: 'role',
+      message: 'Which role do you want to delete?',
+      choices: roles,
+      })
+      try {
+        const result = await connection.query(
+      `DELETE FROM role WHERE id=${answers.role};`)
+        console.log(`'${answers.role} was deleted'`);
+      } catch (err) {
+        console.log("catch");
+        throw err
+      }
+      start();
+    };
   
+    // ************************Update Employee by Role Logic******************************
+    const updateEmployee = async () => {
+      let roles = await connection.query(
+      `SELECT title, role.id FROM role;`
+      );
+      roles = roles.map(row => {
+        const rolesActual = { name: row.title, value: row.id } 
+        return rolesActual;
+      });
+  
+      let employees = await connection.query(
+        `SELECT employee.id, first_Name, last_Name FROM employee`
+      );
+      employees = employees.map(each => {
+        return `${each.id} ${each.first_Name} ${each.last_Name}`
+      });
+      const answers = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'employeeChoice',
+          message: 'Which employee would you like to update?',
+          choices: employees
+        },
+        {
+          type: 'list',
+          name: 'newRole',
+          message: 'What role would you like to assign to this employee?',
+          choices: roles
+        }
+        ]);
+        try {
+          const employeeId = answers.employeeChoice[0].split(' ');
+          console.log(employeeId);
+          console.log(answers.newRole);
+          const result = await connection.query(
+        `UPDATE employee SET role_id = ${answers.newRole} WHERE id = ${employeeId[0]};`);
+          console.log(`'The employee ${answers.employeeChoice} was updated successfully'`);
+        } catch (err) {
+          console.log("catch");
+          throw err
+        }
+    start();
+      };
+  
+  const exit = () => {
+    connection.end();
+  };
+  
+  start();
