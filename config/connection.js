@@ -1,5 +1,7 @@
 // require mysql for database
-const mysql = require('mysql2')
+const mysql = require('mysql')
+// require util for connection to mysql
+const util = require ('util');
 
 
 let config = {
